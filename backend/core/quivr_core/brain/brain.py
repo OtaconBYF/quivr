@@ -608,6 +608,7 @@ class Brain:
         # If you passed a different llm model we'll override the brain  one
         if retrieval_config:
             if retrieval_config.llm_config != self.llm.get_config():
+                logger.debug("Overwriting self.llm with {retrieval_config.llm_config} ");
                 llm = LLMEndpoint.from_config(config=retrieval_config.llm_config)
         else:
             retrieval_config = RetrievalConfig(llm_config=self.llm.get_config())

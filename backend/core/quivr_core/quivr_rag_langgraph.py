@@ -432,7 +432,9 @@ class QuivrQARAGLangGraph:
             kind = event["event"]
             if (
                 not sources
+                and event["data"] is not None
                 and "output" in event["data"]
+                and event["data"]["output"] is not None
                 and "docs" in event["data"]["output"]
             ):
                 sources = event["data"]["output"]["docs"]

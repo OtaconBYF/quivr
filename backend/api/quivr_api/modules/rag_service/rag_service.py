@@ -166,7 +166,7 @@ class RAGService:
         question: str,
     ):
         logger.info(
-            f"Creating question for chat {self.chat_id} with brain {self.brain.brain_id} "
+            f"In generate_answer: Creating question for chat {self.chat_id} with brain {self.brain.brain_id} "
         )
         retrieval_config = await self._get_retrieval_config()
         logger.debug(f"generate_answer with config : {retrieval_config.model_dump()}")
@@ -237,7 +237,7 @@ class RAGService:
         question: str,
     ):
         logger.info(
-            f"Creating question for chat {self.chat_id} with brain {self.brain.brain_id} "
+            f"In generate_answer_stream: Creating question for chat {self.chat_id} with brain {self.brain.brain_id} "
         )
         # Build the rag config
         retrieval_config = await self._get_retrieval_config()
