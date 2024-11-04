@@ -24,10 +24,10 @@ prompt: "my prompt"
 max_files: 20
 reranker_config:
   # The reranker supplier to use
-  supplier: "cohere"
+  supplier: #"cohere"
 
   # The model to use for the reranker for the given supplier
-  model: "rerank-multilingual-v3.0"
+  model: #"rerank-multilingual-v3.0"
 
   # Number of chunks returned by the reranker
   top_n: 5
