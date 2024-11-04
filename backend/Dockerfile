@@ -60,6 +60,7 @@ RUN playwright install --with-deps && \
 
 
 ENV PYTHONPATH=/app
+ENV OPENAI_LOG=debug
 
 COPY . .
 EXPOSE 5050
