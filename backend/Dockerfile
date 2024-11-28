@@ -52,7 +52,9 @@ COPY worker/diff-assistant/quivr_diff_assistant/__init__.py ./worker/diff-assist
 COPY core/MegaParse/pyproject.toml core/MegaParse/README.md ./core/MegaParse/
 COPY core/MegaParse/megaparse/__init__.py ./core/MegaParse/megaparse/__init__.py
 
-RUN PYTHONDONTWRITEBYTECODE=1 pip install --no-cache-dir -r requirements.lock
+#RUN PYTHONDONTWRITEBYTECODE=1 pip install --no-cache-dir -r requirements.lock
+# Skip no-cache here to speed up build
+RUN PYTHONDONTWRITEBYTECODE=1 pip install -r requirements.lock 
 
 RUN playwright install --with-deps && \
     python -c "from unstructured.nlp.tokenize import download_nltk_packages; download_nltk_packages()" && \

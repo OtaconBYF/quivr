@@ -248,10 +248,21 @@ INSERT INTO "public"."users" ("id", "email", "onboarded") VALUES
 -- Data for Name: models; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO "public"."models" ("name", "price", "max_input", "max_output", "description", "display_name", "image_url", "default", "endpoint_url", "env_variable_name") VALUES
-	('gpt-4-0125-preview', 1, 4000, 4000, 'Default Description', 'GPT4', 'https://quivr-cms.s3.eu-west-3.amazonaws.com/logo_quivr_white_7e3c72620f.png', false, 'https://api.openai.com/v1', 'OPENAI_API_KEY'),
-	('gpt-3.5-turbo-0125', 1, 10000, 1000, 'Default Description', 'GPT-3.5', 'https://quivr-cms.s3.eu-west-3.amazonaws.com/logo_quivr_white_7e3c72620f.png', true, 'https://api.openai.com/v1', 'OPENAI_API_KEY');
+-- INSERT INTO "public"."models" ("name", "price", "max_input", "max_output", "description", "display_name", "image_url", "default", "endpoint_url", "env_variable_name") VALUES
+-- 	('gpt-4-0125-preview', 1, 4000, 4000, 'Default Description', 'GPT4', 'https://quivr-cms.s3.eu-west-3.amazonaws.com/logo_quivr_white_7e3c72620f.png', false, 'https://api.openai.com/v1', 'OPENAI_API_KEY'),
+-- 	('gpt-3.5-turbo-0125', 1, 10000, 1000, 'Default Description', 'GPT-3.5', 'https://quivr-cms.s3.eu-west-3.amazonaws.com/logo_quivr_white_7e3c72620f.png', true, 'https://api.openai.com/v1', 'OPENAI_API_KEY');
 
+INSERT INTO "public"."models" ("name", "price", "max_input", "max_output", "description", "display_name", "image_url", "default", "endpoint_url", "env_variable_name") 
+    VALUES 
+     ('gpt-4o', '2', '4000', '4000', 'High-intelligence flagship model for complex, multi-step tasks. GPT-4o is cheaper and faster than GPT-4 Turbo.', 
+     'GPT-4o', 'https://quivr-cms.s3.eu-west-3.amazonaws.com/logo_quivr_white_7e3c72620f.png', 
+     'false', 'https://api.openai.com/v1', 'OPENAI_API_KEY'),
+     ('gpt-4o-mini', '1', '4000', '4000', 'Affordable and intelligent small model for fast, lightweight tasks. GPT-4o mini is cheaper and more capable than GPT-3.5 Turbo.', 
+     'GPT-4o mini', 'https://quivr-cms.s3.eu-west-3.amazonaws.com/logo_quivr_white_7e3c72620f.png', 
+     'true', 'https://api.openai.com/v1', 'OPENAI_API_KEY'),
+    ('gpt-3.5-turbo', '1', '10000', '1000', 'The latest GPT-3.5 Turbo model with higher accuracy at responding in requested formats and a fix for a bug which caused a text encoding issue for non-English language function calls.',
+     'GPT-3.5', 'https://quivr-cms.s3.eu-west-3.amazonaws.com/logo_quivr_white_7e3c72620f.png', 
+     'false', 'https://api.openai.com/v1', 'OPENAI_API_KEY');
 
 --
 -- Data for Name: notifications; Type: TABLE DATA; Schema: public; Owner: postgres
