@@ -141,6 +141,6 @@ class BigBrain(KnowledgeBrainQA):
             if "answer" in chunk:
                 response_tokens.append(chunk["answer"])
                 streamed_chat_history.assistant = chunk["answer"]
-                yield f"data: {json.dumps(streamed_chat_history.dict())}"
+                yield f"{json.dumps(streamed_chat_history.dict())}"
 
         self.save_answer(question, response_tokens, streamed_chat_history, save_answer)

@@ -4,6 +4,7 @@ from uuid import UUID
 
 from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Query, Request
 from fastapi.responses import StreamingResponse
+from sse_starlette import EventSourceResponse
 from quivr_core.config import RetrievalConfig
 
 from quivr_api.logger import get_logger
@@ -341,7 +342,7 @@ async def create_stream_question_handler(
             maybe_send_telemetry, "question_asked", {"streaming": True}, request
         )
 
-        return StreamingResponse(
+        return EventSourceResponse(
             service.generate_answer_stream(chat_question.question),
             media_type="text/event-stream",
         )

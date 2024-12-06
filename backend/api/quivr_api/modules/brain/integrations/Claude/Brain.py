@@ -96,6 +96,6 @@ class ClaudeBrain(KnowledgeBrainQA):
         ):
             response_tokens.append(chunk.content)
             streamed_chat_history.assistant = chunk.content
-            yield f"data: {json.dumps(streamed_chat_history.dict())}"
+            yield f"{json.dumps(streamed_chat_history.dict())}"
 
         self.save_answer(question, response_tokens, streamed_chat_history, save_answer)

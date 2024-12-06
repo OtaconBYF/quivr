@@ -219,7 +219,7 @@ class GPT4Brain(KnowledgeBrainQA):
                     # So we only print non-empty content
                     response_tokens.append(content)
                     streamed_chat_history.assistant = content
-                    yield f"data: {json.dumps(streamed_chat_history.dict())}"
+                    yield f"{json.dumps(streamed_chat_history.dict())}"
             elif kind == "on_tool_start":
                 print("--")
                 print(
@@ -240,7 +240,7 @@ class GPT4Brain(KnowledgeBrainQA):
                         final_message = final_output[0]["final"]["messages"][0].content
                         response_tokens.append(final_message)
                         streamed_chat_history.assistant = final_message
-                        yield f"data: {json.dumps(streamed_chat_history.dict())}"
+                        yield f"{json.dumps(streamed_chat_history.dict())}"
 
         self.save_answer(question, response_tokens, streamed_chat_history, save_answer)
 

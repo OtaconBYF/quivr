@@ -40,6 +40,7 @@ dependencies = [
     "langchain-cohere>=0.2.2",
     "llama-parse>=0.4.9",
     "pgvector>=0.3.2",
+    "sse_starlette"
 ]
 readme = "README.md"
 requires-python = "< 3.12"

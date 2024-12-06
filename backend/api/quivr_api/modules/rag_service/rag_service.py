@@ -330,7 +330,7 @@ class RAGService:
                             metadata_model
                         )
                 full_answer += response.answer
-                yield f"data: {streamed_chat_history.model_dump_json()}"
+                yield f"{streamed_chat_history.model_dump_json()}"
 
         # For last chunk  parse the sources, and the full answer
         streamed_chat_history = GetChatHistoryOutput(
@@ -376,4 +376,4 @@ class RAGService:
                 ),
             ),
         )
-        yield f"data: {streamed_chat_history.model_dump_json()}"
+        yield f"{streamed_chat_history.model_dump_json()}"

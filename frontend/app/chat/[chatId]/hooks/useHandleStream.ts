@@ -40,10 +40,10 @@ export const useHandleStream = () => {
       // Concatenate incomplete data with new chunk
       const rawData = incompleteData + decoder.decode(value, { stream: true });
 
-      const dataStrings = rawData.trim().split("data: ").filter(Boolean);
+      const dataStrings = rawData.trim().split("\n\n").filter(Boolean);
 
       dataStrings.forEach((data, index, array) => {
-        if (index === array.length - 1 && !data.endsWith("\n")) {
+        if (index === array.length - 1) {
           // Last item and does not end with a newline, save as incomplete
           incompleteData = data;
 

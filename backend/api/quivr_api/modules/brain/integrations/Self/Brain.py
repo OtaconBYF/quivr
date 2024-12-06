@@ -444,7 +444,7 @@ class SelfBrain(KnowledgeBrainQA):
                     response_tokens.append(value["generation"])
                     streamed_chat_history.assistant = value["generation"]
 
-                    yield f"data: {json.dumps(streamed_chat_history.dict())}"
+                    yield f"{json.dumps(streamed_chat_history.dict())}"
 
         self.save_answer(question, response_tokens, streamed_chat_history, save_answer)
 
